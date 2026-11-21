@@ -1,0 +1,16 @@
+use fantail;
+
+fn main() {
+    let values = [2, 15, 0];
+    let present = [1, 1, 0];
+    let fallback = 5.0;
+    let minimum = 0.0;
+    let maximum = 10.0;
+    let result = fantail_setting(values, present, fallback, minimum, maximum);
+    if len(result) == 0 { println!("invalid"); return; }
+    let mut i = 0;
+    while i < len(result) {
+        println!(at(result, i));
+        i += 1;
+    }
+}
