@@ -1,10 +1,14 @@
-<img src="assets/logo.png" width="112" height="112" alt="Fantail logo">
+<img src="assets/logo.png" width="112" height="112" alt="A grey fantail spreads black tail feathers with broad ivory tips.">
 
 # Fantail
 
 Resolve a layered setting and report where an invalid override came from. This Blyx workflow framework is part of the validation and configuration collection.
 
 Treating zero as an absent setting silently restores older values. Carry a presence flag and the identity of the winning layer. [Python, configuration defaults and overrides](https://docs.python.org/3/library/configparser.html)
+
+## Editor extension
+
+Install **RahulChaube.blyx-fantail** to run the worked example and use the framework’s function completions in a Blyx file. Open an empty `.blyx` file, enter `blyx-fantail-demo`, then choose **Blyx: Run File**. [Editor downloads](https://www.blyx-lang.space/packages/fantail#editor) · [Download the extension](https://github.com/Rahulchaube1/blyxxxx/releases/download/framework-editors-v0.1.0/blyx-fantail-0.1.0.vsix) · [Starter with framework source](https://github.com/Rahulchaube1/blyxxxx/releases/download/framework-editors-v0.1.0/blyx-fantail-starter-0.1.0.zip)
 
 ## Install and run
 
@@ -86,7 +90,7 @@ This release includes identical copies of both library modules so a tagged clone
 
 ## Verification and contributions
 
-The regression suite in [tests.blyx](tests.blyx) checks the example, boundary cases and invalid inputs. Include a short reproducer and your compiler version in [an issue](https://github.com/Rahulchaube1/blyx-fantail/issues). The source is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE). The package artwork uses [Lucide icons](https://lucide.dev/license); see [artwork notices](assets/NOTICE.txt).
+The regression suite in [tests.blyx](tests.blyx) checks the example, boundary cases and invalid inputs. Include a short reproducer and your compiler version in [an issue](https://github.com/Rahulchaube1/blyx-fantail/issues). The source is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE). The [artwork notice](assets/NOTICE.txt) records credits for earlier editions.
 
 ## Connect with Rahul Chaube
 

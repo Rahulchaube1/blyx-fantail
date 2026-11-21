@@ -1,0 +1,51 @@
+use optionlayer;
+use valuebounds;
+
+fn fantail_finite(values: vector) -> bool {
+    let mut i = 0;
+    while i < len(values) {
+        let value = at(values, i);
+        if !(value - value == 0.0) {
+            return false;
+        }
+        i += 1;
+    }
+    true
+}
+
+fn fantail_counts(values: vector) -> bool {
+    let mut i = 0;
+    while i < len(values) {
+        let value = at(values, i);
+        if !(value >= 0.0 && value <= 9007199254740991.0 && value % 1.0 == 0.0) {
+            return false;
+        }
+        i += 1;
+    }
+    true
+}
+
+fn fantail_compute(values: vector, present: vector, fallback: f64, minimum: f64, maximum: f64) -> vector {
+    let layer = optionlayer_resolve(values, present, fallback);
+    if len(layer) == 0 {
+        return [];
+    }
+    let rule = valuebounds_check(at(layer, 0), minimum, maximum);
+    if len(rule) == 0 {
+        return [];
+    }
+    [at(rule, 0), at(layer, 0), at(layer, 1), at(rule, 2)]
+}
+
+// Resolve a layered setting and report where an invalid override came from.
+// Returns [accepted, selected value, winning layer, distance outside bounds]. An invalid override remains visible for diagnosis.
+pub fn fantail_setting(values: vector, present: vector, fallback: f64, minimum: f64, maximum: f64) -> vector {
+    if !fantail_finite(values) { return []; }
+    if !fantail_counts(present) { return []; }
+    if !(fallback - fallback == 0.0) { return []; }
+    if !(minimum - minimum == 0.0) { return []; }
+    if !(maximum - maximum == 0.0) { return []; }
+    let result = fantail_compute(values, present, fallback, minimum, maximum);
+    if !fantail_finite(result) { return []; }
+    result
+}
